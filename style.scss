@@ -29,10 +29,10 @@ $bp-wide: 1440px;
 }
 
 @mixin mw() {
-	width: 1920px;
-	max-width: 100%;
-	margin-left: auto;
-	margin-right: auto;
+  width: 1920px;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 :root {
@@ -61,35 +61,36 @@ $bp-wide: 1440px;
 
 html {
   font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 
 body {
   font-family: "Lato", sans-serif;
+  font-smoothing: antialiased;
   font-size: 1.6rem;
   line-height: 1.5;
   color: var(--font-color);
   background-color: var(--body-background-color);
-	// max-width: 100vw;
-	// overflow-x: hidden;
+  // max-width: 100vw;
+  // overflow-x: hidden;
 }
 
 .header {
-
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   padding: 1.6rem;
-  z-index: 10;
+  z-index: 100;
 
-	&__content {
-		display: flex;
-		justify-content: space-between;
-		transition: background-color 0.5s ease;
-		background-color: transparent;
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    transition: background-color 0.5s ease;
+    background-color: transparent;
 
-		@include mw();
-	}
+    @include mw();
+  }
 
   &--scrolled {
     background-color: var(--primary-background-color);
@@ -194,30 +195,30 @@ body {
 
   &:hover,
   &:focus {
-		transform: scale(1.05);
-	}
+    transform: scale(1.05);
+  }
 
   span {
     position: relative;
     top: 3px;
-		display: none;	
+    display: none;
   }
 
-	img {
-		width: 24px;
-		height: 24px;
-	}
+  img {
+    width: 24px;
+    height: 24px;
+  }
 
   + button {
     margin-left: 1rem;
 
-		@include res(tab) {
-			margin-left: 2rem;
-		}
+    @include res(tab) {
+      margin-left: 2rem;
+    }
 
-		@include res(wide) {
-			margin-right: 3rem;
-		}
+    @include res(wide) {
+      margin-right: 3rem;
+    }
   }
 }
 
@@ -253,14 +254,14 @@ body {
       margin: auto;
     }
 
-		@include res(desktop) {
-			padding: 5rem;
-		}
+    @include res(desktop) {
+      padding: 5rem;
+    }
   }
 
   &__image {
     display: block;
-    margin:  4rem auto 0;
+    margin: 4rem auto 0;
     max-width: 100%;
   }
 
@@ -280,15 +281,20 @@ body {
 .section {
   padding: 3.5rem;
 
-	@include res(tab) {
-		padding: 5rem;
-	}
+  @include res(tab) {
+    padding: 5rem;
+  }
+
+  @include res(desktop) {
+    padding: 7rem 5rem;
+  }
 
   &__title {
     font-size: 3.4rem;
     font-weight: 400;
     margin-bottom: 1rem;
     text-align: center;
+    text-transform: capitalize;
   }
 
   &__paragraph {
@@ -300,62 +306,67 @@ body {
 }
 
 .why {
-	position: relative;
+  position: relative;
+  @include mw;
+  @include res(desktop) {
+    display: flex;
+  }
 
-	@include res(desktop) {
-		display: flex;
-	}
+  &::after {
+    content: "";
+    height: 1px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #d0d2e1;
+    display: block;
 
-	&::after {
-		content: '';
-		height: 1px;
-		position: absolute;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		background-color: #D0D2E1;
-		display: block;
+    @include res(tab) {
+      left: 5%;
+      right: 5%;
+    }
+  }
 
-		@include res(tab) {
-			left: 5%;
-			right: 5%;
-		}
-	}
+  &__section {
+    width: 100%;
+    position: relative;
 
-	&__section {
-		width: 100%;
-		position: relative;
+    &:first-child {
+      background: url("./assets/images/why-section-background.svg") bottom right
+        5rem no-repeat;
 
-		&:first-child {
-			background: url('./assets/images/why-section-background.svg') bottom right 5rem no-repeat;
-		}
-	}
+      @include res(desktop) {
+        padding-top: 8rem;
+      }
+    }
+  }
 
-	&__title {
-		@include res(desktop) {
-			margin-bottom: 4rem;
-		}
-	}
+  &__title {
+    @include res(desktop) {
+      margin-bottom: 4rem;
+    }
+  }
 
-	&__title,
-	&__paragraph {
-		@include res(desktop) {
-			text-align: left;
-			width: 80%;
-		}
-	}
+  &__title,
+  &__paragraph {
+    @include res(desktop) {
+      text-align: left;
+      width: 80%;
+    }
+  }
 
-	&__grid {
-		display: none;
+  &__grid {
+    display: none;
 
-		@include res(desktop) {
-			display: block;
-			position: absolute;
-			right: 8rem;
-			bottom: 1rem;
-			animation: rotating 15s linear infinite;
-		}
-	}
+    @include res(desktop) {
+      display: block;
+      position: absolute;
+      right: 8rem;
+      bottom: 1rem;
+      animation: rotating 15s linear infinite;
+    }
+  }
 }
 
 .why-list {
@@ -370,31 +381,45 @@ body {
     align-items: center;
     margin-bottom: 3rem;
     text-align: center;
-		position: relative;
+    position: relative;
 
-		@include res(tab) {
-			flex-direction: row;
-			margin-left: auto;
-			margin-right: auto;
-			max-width: 520px;
-			margin-bottom: 5rem;
-		}
+    @include res(tab) {
+      flex-direction: row;
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 520px;
+      margin-bottom: 4rem;
+    }
 
-		&:nth-child(2) {
-			@include res(desktop) {
-				left: 75px;
-			}
-		}
+    &:nth-child(2) {
+      @include res(desktop) {
+        left: 7.5rem;
+      }
+    }
 
-		> span {
-			display: flex;
-			flex-direction: column;
+    > span {
+      display: flex;
+      flex-direction: column;
 
-			@include res(tab) {
-				align-items: flex-start;
-				text-align: left;
-			}
-		}
+      @include res(tab) {
+        align-items: flex-start;
+        text-align: left;
+      }
+    }
+  }
+
+  &__line {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    &--top {
+      transform: translate(-120%, -50%);
+    }
+
+    &--bottom {
+      transform: translate(-90%, 90%);
+    }
   }
 
   &__item-title {
@@ -406,16 +431,40 @@ body {
   &__image {
     margin-bottom: 2.5rem;
 
-		@include res(tab) {
-			margin-bottom: 0;
-			margin-right: 3rem;
-		}
+    @include res(tab) {
+      margin-bottom: 0;
+      margin-right: 3rem;
+    }
   }
 }
 
 .service {
+  background-size: contain;
+
+  @include res(tab) {
+    background: url("./assets/images/service-background.svg") bottom right -100px
+      no-repeat;
+    padding-bottom: 10rem;
+  }
+
+  @include res(desktop) {
+    padding-bottom: 15rem;
+  }
+
+  &__header {
+    width: 446px;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5rem;
+  }
+
   &__title {
     text-align: center;
+
+    @include res(tab) {
+      margin-bottom: 3rem;
+    }
   }
 
   &__paragraph {
@@ -428,7 +477,19 @@ body {
   }
 }
 
-.serice-item {
+.service-item {
+  @include res(tab) {
+    width: 446px;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &__image {
+    display: block;
+    margin: 0 auto 3rem;
+  }
+
   &__title {
     font-size: 3.4rem;
     font-weight: bold;
@@ -536,7 +597,6 @@ body {
   margin-top: -50px;
   margin-bottom: 250px;
 
-
   .wave {
     background: url("./assets/images/first-wave.svg") repeat-x;
     position: absolute;
@@ -563,6 +623,173 @@ body {
   }
 }
 
+.price {
+  &__header {
+    width: 446px;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5rem;
+  }
+}
+
+.pricing {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  margin: 0 auto 3em;
+
+  &-item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+    flex: 0 1 330px;
+  }
+  &-action {
+    color: inherit;
+    border: none;
+    background: none;
+    cursor: pointer;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &-feature-list {
+    text-align: left;
+  }
+}
+
+.pricing-palden {
+  .pricing__item--featured {
+    @media screen and (min-width: 66.25em) {
+      margin: 0;
+      z-index: 10;
+      box-shadow: 0 0 20px rgba(46, 59, 125, 0.23);
+      position: relative;
+      top: -2rem;
+    }
+  }
+  .pricing-item {
+    cursor: default;
+    color: #84697c;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(46, 59, 125, 0.23);
+    border-radius: 20px 20px 10px 10px;
+    margin: 1em;
+
+    @media screen and (min-width: 66.25em) {
+      margin: 1em -0.5em;
+    }
+
+    &:hover {
+      .deco-layer--1 {
+        transform: translate3d(15px, 0, 0);
+      }
+
+      .deco-layer--2 {
+        transform: translate3d(-15px, 0, 0);
+      }
+    }
+
+    .pricing-deco {
+      border-radius: 10px 10px 0 0;
+      background: linear-gradient(135deg, #4097f9, #0af0c7);
+      padding: 4em 0 9em;
+      position: relative;
+    }
+
+    .pricing-deco-img {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 160px;
+    }
+
+    .pricing-title {
+      font-size: 0.75em;
+      margin: 0;
+      text-transform: uppercase;
+      letter-spacing: 5px;
+      color: #fff;
+    }
+
+    .deco-layer {
+      transition: transform 0.5s;
+    }
+
+    .icon {
+      font-size: 2.5em;
+    }
+
+    .pricing-price {
+      font-size: 5em;
+      font-weight: bold;
+      padding: 0;
+      color: #fff;
+      margin: 0 0 0.25em 0;
+      line-height: 0.75;
+    }
+
+    .pricing-currency {
+      font-size: 0.15em;
+      vertical-align: top;
+    }
+
+    .pricing-period {
+      font-size: 0.15em;
+      padding: 0 0 0 0.5em;
+      font-style: italic;
+    }
+
+    .pricing__sentence {
+      font-weight: bold;
+      margin: 0 0 1em 0;
+      padding: 0 0 0.5em;
+    }
+
+    .pricing-feature-list {
+      margin: 0;
+      padding: 0.25em 0 2.5em;
+      list-style: none;
+      text-align: center;
+    }
+
+    .pricing-feature {
+      padding: 1em 0;
+    }
+
+    .pricing-action {
+      font-weight: bold;
+      margin: auto 3em 2em 3em;
+      padding: 1em 2em;
+      color: #fff;
+      border-radius: 30px;
+      background: linear-gradient(135deg, #a93bfe, #584efd);
+      -webkit-transition: background-color 0.3s;
+      transition: background-color 0.3s;
+
+      &:hover,
+      &:focus {
+        background: linear-gradient(135deg, #fd7d57, #f55d59);
+      }
+    }
+
+    .pricing-item--featured .pricing-deco {
+      padding: 5em 0 8.885em 0;
+    }
+  }
+}
+
+.testimonials {
+  background-color: var(--primary-background-color);
+}
+
 @keyframes wave {
   0% {
     margin-left: 0;
@@ -571,6 +798,281 @@ body {
     margin-left: -1600px;
   }
 }
+
+.footer {
+  @include res(tab) {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+
+  @include res(desktop) {
+    flex-wrap: nowrap;
+  }
+
+  &__section {
+    width: 100%;
+  }
+}
+
+.testim {
+  width: 100%;
+}
+
+.testim .wrap {
+  position: relative;
+  width: 100%;
+  max-width: 1020px;
+  padding: 40px 20px;
+  margin: auto;
+  background-color: #fff;
+  border-radius: 15px;
+  z-index: 10;
+
+  &::after,
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    z-index: 0;
+    background-color: #fff;
+    border-radius: 15px;
+    opacity: 0.5;
+  }
+
+  &::after {
+    left: -1.5rem;
+    right: -1.5rem;
+    top: 1.5rem;
+    bottom: 1.5rem;
+  }
+
+  &::before {
+    left: -3rem;
+    right: -3rem;
+    top: 3.5rem;
+    bottom: 3.5rem;
+  }
+
+  * {
+    z-index: 5;
+  }
+}
+
+.testim .arrow {
+  display: block;
+  position: absolute;
+  color: #eee;
+  cursor: pointer;
+  font-size: 2em;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: all 0.3s ease-in-out;
+  padding: 5px;
+  z-index: 22222222;
+}
+
+.testim .arrow:before {
+  cursor: pointer;
+}
+
+.testim .arrow:hover {
+  color: #ea830e;
+}
+
+.testim .arrow.left {
+  left: 10px;
+}
+
+.testim .arrow.right {
+  right: 10px;
+}
+
+.testim .dots {
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  bottom: 60px;
+  left: 0;
+  display: block;
+  z-index: 3333;
+  height: 12px;
+}
+
+.testim .dots .dot {
+  list-style-type: none;
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 1px solid #eee;
+  margin: 0 10px;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+  position: relative;
+}
+
+.testim .dots .dot.active,
+.testim .dots .dot:hover {
+  background: #ea830e;
+  border-color: #ea830e;
+}
+
+.testim .dots .dot.active {
+  animation: testim-scale 0.5s ease-in-out forwards;
+}
+
+.testim .cont {
+  position: relative;
+  overflow: hidden;
+}
+
+.testim .cont > div {
+  text-align: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0 0 70px 0;
+  opacity: 0;
+}
+
+.testim .cont > div.inactive {
+  opacity: 1;
+}
+
+.testim .cont > div.active {
+  position: relative;
+  opacity: 1;
+}
+
+.testim .cont div .img img {
+  display: block;
+  width: 100px;
+  height: 100px;
+  margin: auto;
+  border-radius: 50%;
+}
+
+.testim .cont div h2 {
+  color: #ea830e;
+  font-size: 1em;
+  margin: 15px 0;
+}
+
+.testim .cont div p {
+  font-size: 1.15em;
+  color: #eee;
+  width: 80%;
+  margin: auto;
+}
+
+.testim .cont div.active .img img {
+  animation: testim-show 0.5s ease-in-out forwards;
+}
+
+.testim .cont div.active h2 {
+  animation: testim-content-in 0.4s ease-in-out forwards;
+}
+
+.testim .cont div.active p {
+  animation: testim-content-in 0.5s ease-in-out forwards;
+}
+
+.testim .cont div.inactive .img img {
+  animation: testim-hide 0.5s ease-in-out forwards;
+}
+
+.testim .cont div.inactive h2 {
+  animation: testim-content-out 0.4s ease-in-out forwards;
+}
+
+.testim .cont div.inactive p {
+  animation: testim-content-out 0.5s ease-in-out forwards;
+}
+
+@keyframes testim-scale {
+  0% {
+    box-shadow: 0px 0px 0px 0px #eee;
+  }
+
+  35% {
+    box-shadow: 0px 0px 10px 5px #eee;
+  }
+
+  70% {
+    box-shadow: 0px 0px 10px 5px #ea830e;
+  }
+
+  100% {
+    box-shadow: 0px 0px 0px 0px #ea830e;
+  }
+}
+
+@keyframes testim-content-in {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes testim-content-out {
+  from {
+    opacity: 1;
+    transform: translateY(0); 
+  }
+
+  to {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes testim-show {
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+@keyframes testim-hide {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  to {
+    opacity: 0;
+    transform: scale(0);
+  }
+}
+
+@media all and (max-width: 300px) {
+  body {
+    font-size: 14px;
+  }
+}
+
+@media all and (max-width: 500px) {
+  .testim .arrow {
+    font-size: 1.5em;
+  }
+
+  .testim .cont div p {
+    line-height: 25px;
+  }
+}
+
 @keyframes swell {
   0%,
   100% {
@@ -582,10 +1084,10 @@ body {
 }
 
 @keyframes rotating {
-	from{
-			transform: rotate(0deg) scale(0.8);
-	}
-	to{
-			transform: rotate(360deg) scale(1.2);
-	}
+  from {
+    transform: rotate(0deg) scale(0.8);
+  }
+  to {
+    transform: rotate(360deg) scale(1.2);
+  }
 }
