@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1797.043" height="707.701" viewBox="0 0 1797.043 707.701">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.222" y1="0.387" x2="0.906" y2="0.645" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#f2617a" stop-opacity="0.141"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0.008"/>
+    </linearGradient>
+  </defs>
+  <g id="Group_20" data-name="Group 20" transform="translate(-34 -63.149)">
+    <path id="Path_3_Copy" data-name="Path 3 Copy" d="M-9.081,180.287S-133.176,80.252-217.49,147.841s-274.16,87.3-285.293-12.289S-660.935-45.291-721.2,28.638s-130.048-12.709-115.97,0,11.5,287.456,78.526,367.015,125.05,102.028,287.822,67.82,242.2.662,260.246,69.884S0,610,0,610V194.256Z" transform="translate(923.957 668.603) rotate(-173)" fill="url(#linear-gradient)"/>
+    <g id="Group_11_Copy" data-name="Group 11 Copy" transform="translate(317 68)">
+      <path id="Triangle" d="M-78.589,128.934c-25.57-52.405-100.251-52.405-125.821,0L-283,290h122.938c73.915,0,122.285-77.422,89.872-143.852Z" transform="translate(0 113)" fill="#910d24" opacity="0.05"/>
+      <path id="Triangle_Copy" data-name="Triangle Copy" d="M-78.589,128.934c-25.57-52.405-100.251-52.405-125.821,0L-283,290h122.938c73.915,0,122.285-77.422,89.872-143.852Z" fill="#ffa5b4" opacity="0.1"/>
+    </g>
+  </g>
+</svg>

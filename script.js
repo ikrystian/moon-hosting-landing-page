@@ -11,3 +11,7 @@ const onScroll =() => {
 }
 
 window.addEventListener('scroll', onScroll);
+
+document.querySelector('.toggle-mobile-nav-button').addEventListener('click', () => {
+  document.querySelector('.mobile-nav').classList.toggle('active');
+});
