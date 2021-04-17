@@ -295,6 +295,10 @@ body {
     margin-bottom: 1rem;
     text-align: center;
     text-transform: capitalize;
+
+    &--on-accent-section {
+      color: #fff;
+    }
   }
 
   &__paragraph {
@@ -302,6 +306,10 @@ body {
     line-height: 3rem;
     color: var(--content-color);
     text-align: center;
+
+    &--on-accent-section {
+      color: #fff;
+    }
   }
 }
 
@@ -412,6 +420,11 @@ body {
     position: absolute;
     top: 0;
     left: 0;
+    display: none;
+
+    @include res(desktop) {
+      display: block;
+    }
 
     &--top {
       transform: translate(-120%, -50%);
@@ -531,6 +544,24 @@ body {
   display: flex;
   flex-direction: column;
   padding: 2rem;
+  @include mw;
+
+  @include res(tab) {
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+
+  &__section {
+    &:nth-child(1),
+    &:nth-child(4) {
+      flex-basis: 2;
+    }
+
+    &:nth-child(2),
+    &:nth-child(3) {
+      flex-basis: 1;
+    }
+  }
 
   &__logo {
     max-width: 147px;
@@ -817,6 +848,11 @@ body {
 
 .testim {
   width: 100%;
+  margin-top: 2rem;
+
+  @include res(tab) {
+    margin-top: 3rem;
+  }
 }
 
 .testim .wrap {
@@ -877,7 +913,7 @@ body {
 }
 
 .testim .arrow:hover {
-  color: #ea830e;
+  color: var(--primary-color);
 }
 
 .testim .arrow.left {
@@ -914,8 +950,8 @@ body {
 
 .testim .dots .dot.active,
 .testim .dots .dot:hover {
-  background: #ea830e;
-  border-color: #ea830e;
+  background: var(--primary-color);
+  border-color: var(--primary-color);
 }
 
 .testim .dots .dot.active {
@@ -949,19 +985,19 @@ body {
   display: block;
   width: 100px;
   height: 100px;
-  margin: auto;
+  margin: 1rem auto 0;
   border-radius: 50%;
 }
 
 .testim .cont div h2 {
-  color: #ea830e;
+  color: var(--primary-color);
   font-size: 1em;
   margin: 15px 0;
 }
 
 .testim .cont div p {
   font-size: 1.15em;
-  color: #eee;
+  color: #3d3f54;
   width: 80%;
   margin: auto;
 }
@@ -1000,11 +1036,11 @@ body {
   }
 
   70% {
-    box-shadow: 0px 0px 10px 5px #ea830e;
+    box-shadow: 0px 0px 10px 5px var(--primary-color);
   }
 
   100% {
-    box-shadow: 0px 0px 0px 0px #ea830e;
+    box-shadow: 0px 0px 0px 0px var(--primary-color);
   }
 }
 
