@@ -850,7 +850,9 @@ body {
     margin-bottom: 3rem;
 
     li {
-      margin-bottom: 0.5rem;
+      &:not(:last-of-type) {
+        margin-bottom: 0.5rem;
+      }
     }
 
     a {

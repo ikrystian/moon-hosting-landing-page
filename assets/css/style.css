@@ -583,7 +583,7 @@ body {
   .footer ul {
     list-style: none;
     margin-bottom: 3rem; }
-    .footer ul li {
+    .footer ul li:not(:last-of-type) {
       margin-bottom: 0.5rem; }
     .footer ul a {
       font-size: 1.6rem;
@@ -622,6 +622,8 @@ body {
     color: var(--social-link-color);
     opacity: 0.5;
     transition: opacity 0.2s ease-in-out; }
+    .social__link::after {
+      display: none !important; }
     .social__link:hover, .social__link:focus {
       opacity: 1; }
   .social__image {
