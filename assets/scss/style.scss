@@ -60,7 +60,8 @@ $bp-wide: 1440px;
   --primary-color: hsl(280, 75%, 79%);
   --body-background-color: #f8f9fd;
   --font-color: hsl(235, 27%, 33%);
-  --primary-background-color: #490e67;
+  --primary-background-color: rgba(73, 14, 103, 1);
+  --primary-header-top-color: rgba(73, 14, 103, 0);
   --accent-section-font-color: hsl(0, 0%, 100%);
   --logo-primary-color: hsl(0, 0%, 100%);
   --content-color: hsl(221, 19%, 53%);
@@ -107,18 +108,19 @@ body {
   right: 0;
   padding: 1.6rem;
   z-index: 100;
+  background-color: var(--primary-header-top-color);
+  transition: background-color 0.5s ease-in-out;
 
   &__content {
     display: flex;
     justify-content: space-between;
     transition: background-color 0.5s ease;
-    background-color: transparent;
-
     @include mw();
   }
 
   &--scrolled {
     background-color: var(--primary-background-color);
+    box-shadow: 0 1px 2px rgba(255, 255, 255, 0.2);
   }
 
   nav {
