@@ -2,7 +2,7 @@
   "name": "moon-hosting-landing-page",
   "version": "1.0.0",
   "description": "",
-  "main": "script.js",
+  "main": "assets/js/script.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build-css": "node-sass --include-path scss assets/scss/style.scss   assets/css/style.css",

@@ -141,10 +141,10 @@ body {
         margin-right: 2.5rem; } }
     @media only screen and (min-width: 1024px) {
       .main-nav li:not(:last-of-type) {
-        margin-right: 4rem; } }
+        margin-right: 3rem; } }
     @media only screen and (min-width: 1440px) {
       .main-nav li:not(:last-of-type) {
-        margin-right: 5.5rem; } }
+        margin-right: 3rem; } }
 
 .log-in-button {
   border-radius: 4px;

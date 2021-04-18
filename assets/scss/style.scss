@@ -235,11 +235,11 @@ body {
       }
 
       @include res(desktop) {
-        margin-right: 4rem;
+        margin-right: 3rem;
       }
 
       @include res(wide) {
-        margin-right: 5.5rem;
+        margin-right: 3rem;
       }
     }
   }
