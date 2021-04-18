@@ -709,6 +709,10 @@ body {
     margin-left: auto;
   }
 
+  &--first {
+
+  }
+
   &__image {
     display: block;
     margin: 0 auto 3rem;
@@ -782,12 +786,14 @@ body {
     display: flex;
     border-radius: 5px;
 
+    &--active,
     &:hover,
     &:focus {
       background-color: #fff;
       color: #001bc0;
       box-shadow: 0 8px 23px rgba(127, 154, 180, 0.5);
     }
+
   }
 }
 

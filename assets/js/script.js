@@ -31,5 +31,21 @@ document.querySelector('.log-in-button').addEventListener('click', (e) => {
 
 document.querySelector('.form__button--cancel').addEventListener('click', () => {
     document.querySelector('.dialog__wrapper').style.display = 'none';
-})
+});
+
+const services = document.querySelectorAll('.service-list__link');
+const activeClass = 'service-list__link--active';
+const activeSection = 'active-section';
+services.forEach(el => {
+    el.addEventListener('click', (e) => {
+        const data = el.dataset.item
+        console.log(data);
+        e.preventDefault();
+        document.querySelector(`.${activeClass}`).classList.remove(activeClass);
+    //     document.querySelector(`.${activeSection}`).classList.remove(activeSection);
+    //     document.getElementById(`${data}}`).classList.add(activeSection);
+    //     el.classList.add(activeClass);
+    //
+    });
+});
 

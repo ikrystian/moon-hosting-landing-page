@@ -536,7 +536,7 @@ body {
     transition: all 0.2s ease-in-out;
     display: flex;
     border-radius: 5px; }
-    .service-list__link:hover, .service-list__link:focus {
+    .service-list__link--active, .service-list__link:hover, .service-list__link:focus {
       background-color: #fff;
       color: #001bc0;
       box-shadow: 0 8px 23px rgba(127, 154, 180, 0.5); }
