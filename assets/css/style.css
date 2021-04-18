@@ -144,7 +144,6 @@ body {
         margin-right: 5.5rem; } }
 
 .log-in-button {
-  border: 1px solid #fff;
   border-radius: 4px;
   height: 24px;
   display: none;
@@ -155,15 +154,27 @@ body {
   background-color: #fff;
   text-decoration: none;
   text-transform: uppercase;
-  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out; }
+  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+  position: relative; }
+  .log-in-button::after {
+    content: '';
+    position: absolute;
+    top: -0.5rem;
+    left: -0.5rem;
+    right: -0.5rem;
+    bottom: -0.5rem;
+    border-radius: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.2);
+    display: block;
+    animation: fadeIn 1s infinite alternate; }
   @media only screen and (min-width: 520px) {
     .log-in-button {
-      display: inline-block; } }
-  .log-in-button:hover, .log-in-button:focus {
-    transform: scale(1.05); }
+      height: 32px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center; } }
   .log-in-button span {
     position: relative;
-    top: 3px;
     display: none;
     font-weight: 700; }
     @media only screen and (min-width: 768px) {
