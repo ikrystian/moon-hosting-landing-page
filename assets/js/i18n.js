@@ -1,7 +1,7 @@
  i18n = {
     allowLang: ["en", "pl"],
     defaultLang: "pl",
-    langPath: "/assets/js/lang/",
+    langPath: "./assets/js/lang/",
 
     getLang() {
         const url = new URL(window.location);
