@@ -779,7 +779,7 @@ body {
     top: 0;
     bottom: 0;
     right: 0;
-    background: var(--primary-background-color) url("/assets/images/testimonials-bg.svg") center no-repeat;
+    background: var(--primary-background-color) url("../images/testimonials-bg.svg") center no-repeat;
     transform: skewY(1deg); }
   .testimonials__title, .testimonials__paragraph {
     position: relative;
