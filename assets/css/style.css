@@ -170,7 +170,7 @@ body {
     background-color: rgba(255, 255, 255, 0.2);
     display: block;
     animation: fadeIn 1s infinite alternate; }
-  @media only screen and (min-width: 520px) {
+  @media only screen and (min-width: 768px) {
     .log-in-button {
       height: 32px;
       display: inline-flex;

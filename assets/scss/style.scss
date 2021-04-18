@@ -272,7 +272,7 @@ body {
     animation: fadeIn 1s infinite alternate;
   }
 
-  @include res(phone) {
+  @include res(tab) {
     height: 32px;
     display: inline-flex;
     align-items: center;
