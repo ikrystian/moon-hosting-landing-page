@@ -23,3 +23,13 @@ function toggleNav() {
   document.querySelector('.toggle-mobile-nav-button').classList.toggle('active');
   document.querySelector('body').classList.toggle('blocked');
 }
+
+document.querySelector('.log-in-button').addEventListener('click', (e) => {
+  e.preventDefault();
+  document.querySelector('.dialog__wrapper').style.display = 'grid';
+})
+
+document.querySelector('.form__button--cancel').addEventListener('click', () => {
+  document.querySelector('.dialog__wrapper').style.display = 'none';
+})
+

@@ -755,6 +755,30 @@
         </div>
     </div>
 </footer>
+<div class="dialog__wrapper" role="dialog">
+    <div class="dialog">
+        <header class="dialog__header">
+            <h1 class="dialog__title">Zaloguj się</h1>
+        </header>
+        <section class="dialog__content">
+            <form action="" class="form" id="login-form">
+                <div class="form__group">
+                    <label for="email">E-mail</label>
+                    <input type="email" placeholder="e.g: login@domain.com" id="email" name="email" class="form__input">
+                </div>
+
+                <div class="form__group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" class="form__input">
+                </div>
+            </form>
+        </section>
+        <footer class="dialog__footer">
+            <button class="form__button form__button--cancel" type="button">Anuluj</button>
+            <button class="form__button form__button--submit" type="button">Zaloguj</button>
+        </footer>
+    </div>
+</div>
 <script src="script.js"></script>
 <script src="testimonials.js"></script>
 </body>
