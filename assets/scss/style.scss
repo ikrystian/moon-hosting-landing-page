@@ -904,6 +904,10 @@ body {
     opacity: 0.5;
     transition: opacity 0.2s ease-in-out;
 
+    &::after {
+      display: none !important;
+    }
+
     &:hover,
     &:focus {
       opacity: 1;
