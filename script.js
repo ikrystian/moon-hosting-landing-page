@@ -20,5 +20,6 @@ document.querySelector('.mobile-nav a').addEventListener('click', () => toggleNa
 
 function toggleNav() {
   document.querySelector('.mobile-nav').classList.toggle('active');
+  document.querySelector('.toggle-mobile-nav-button').classList.toggle('active');
   document.querySelector('body').classList.toggle('blocked');
 }
