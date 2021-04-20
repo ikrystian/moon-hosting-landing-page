@@ -703,6 +703,8 @@ body {
 }
 
 .service-item {
+  position: relative;
+
   @include res(tab) {
     width: 446px;
     max-width: 100%;
@@ -710,10 +712,15 @@ body {
   }
 
   &__slide {
-    display: none;
+    display: block;
+    position: absolute;
+    transform: translateX(-5rem);
+    transition: all 0.5s ease-in-out;
+    opacity: 0;
 
     &.active-section {
-      display: block;
+      transform: translateX(0);
+      opacity: 1;
     }
   }
 

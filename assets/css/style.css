@@ -471,60 +471,62 @@ body {
       .service__list {
         display: block; } }
 
-@media only screen and (min-width: 768px) {
-  .service-item {
-    width: 446px;
-    max-width: 100%;
-    margin-left: auto; } }
-
-.service-item__slide {
-  display: none; }
-  .service-item__slide.active-section {
-    display: block; }
-
-.service-item__image {
-  display: block;
-  margin: 0 auto 3rem;
-  max-width: 100%;
-  height: auto; }
-
-.service-item__title {
-  font-size: 3.4rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
-  text-align: center; }
+.service-item {
+  position: relative; }
   @media only screen and (min-width: 768px) {
-    .service-item__title {
-      text-align: left; } }
-
-.service-item__footer {
-  display: flex;
-  justify-content: center;
-  margin-top: 1rem; }
-
-.service-item__link {
-  position: relative;
-  color: var(--link-color);
-  text-decoration: none;
-  font-weight: 700;
-  text-transform: uppercase;
-  display: inline-block;
-  margin-top: 1rem; }
-  .service-item__link::after {
-    content: "";
+    .service-item {
+      width: 446px;
+      max-width: 100%;
+      margin-left: auto; } }
+  .service-item__slide {
     display: block;
-    width: 24px;
-    height: 15px;
     position: absolute;
-    right: -6px;
-    top: 4px;
-    background: url("../images/arrow.svg") center no-repeat;
-    transform: translateX(28px);
-    opacity: 1;
-    transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out; }
-  .service-item__link:hover::after {
-    opacity: 0;
-    transform: translateX(60px); }
+    transform: translateX(-5rem);
+    transition: all 0.5s ease-in-out;
+    opacity: 0; }
+    .service-item__slide.active-section {
+      transform: translateX(0);
+      opacity: 1; }
+  .service-item__image {
+    display: block;
+    margin: 0 auto 3rem;
+    max-width: 100%;
+    height: auto; }
+  .service-item__title {
+    font-size: 3.4rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-align: center; }
+    @media only screen and (min-width: 768px) {
+      .service-item__title {
+        text-align: left; } }
+  .service-item__footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem; }
+  .service-item__link {
+    position: relative;
+    color: var(--link-color);
+    text-decoration: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-top: 1rem; }
+    .service-item__link::after {
+      content: "";
+      display: block;
+      width: 24px;
+      height: 15px;
+      position: absolute;
+      right: -6px;
+      top: 4px;
+      background: url("../images/arrow.svg") center no-repeat;
+      transform: translateX(28px);
+      opacity: 1;
+      transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out; }
+    .service-item__link:hover::after {
+      opacity: 0;
+      transform: translateX(60px); }
 
 .service-list {
   display: flex;
