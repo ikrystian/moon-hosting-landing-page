@@ -39,14 +39,13 @@ const activeClass = 'service-list__link--active';
 const activeSection = 'active-section';
 services.forEach(el => {
     el.addEventListener('click', (e) => {
-        const data = el.dataset.item
-        console.log(data);
         e.preventDefault();
         document.querySelector(`.${activeClass}`).classList.remove(activeClass);
-    //     document.querySelector(`.${activeSection}`).classList.remove(activeSection);
-    //     document.getElementById(`${data}}`).classList.add(activeSection);
-    //     el.classList.add(activeClass);
-    //
+        document.querySelector(`.${activeSection}`).classList.remove(activeSection);
+        const data = el.dataset.item
+        console.log(data);
+        document.getElementById(data).classList.add(activeSection);
+        el.classList.add(activeClass);
     });
 });
 

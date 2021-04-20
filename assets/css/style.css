@@ -477,6 +477,11 @@ body {
     max-width: 100%;
     margin-left: auto; } }
 
+.service-item__slide {
+  display: none; }
+  .service-item__slide.active-section {
+    display: block; }
+
 .service-item__image {
   display: block;
   margin: 0 auto 3rem;

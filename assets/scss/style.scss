@@ -709,9 +709,14 @@ body {
     margin-left: auto;
   }
 
-  &--first {
+  &__slide {
+    display: none;
 
+    &.active-section {
+      display: block;
+    }
   }
+
 
   &__image {
     display: block;
